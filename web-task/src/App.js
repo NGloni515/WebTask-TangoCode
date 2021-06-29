@@ -1,25 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar/Navbar.jsx';
 
-function App() {
+import { connect } from 'react-redux';
+
+import { getCars } from './redux/cars/cars.actions';
+
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <button onClick={() => props.getCars()}>GET CARS</button>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    cars: state.cars.currentCars,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getCars: () => dispatch(getCars())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default App;
