@@ -19,9 +19,7 @@ const Navbar = () => {
 
     return(
         <Nav className="navbar">
-            <IconBackground>
-                    ign
-                </IconBackground>
+            <IconBackground/>
                 <IconContainer>
                     <ClockIcon/>
                 </IconContainer>

@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar.jsx';
+import Body from './components/Body/Body';
 
 import { connect } from 'react-redux';
 
@@ -10,7 +11,8 @@ function App(props) {
   return (
     <div className="App">
       <Navbar />
-      <button onClick={() => props.getCars()}>GET CARS</button>
+      <Body />
+      {/* <button onClick={() => props.getCars()}>GET CARS</button> */}
     </div>
   );
 }
