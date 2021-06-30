@@ -1,9 +1,40 @@
-import { GET_CARS } from './cars.types';
+import { GET_CURRENT_CAR } from './cars.types';
 
-export const getCars = () => {
-    // call api get cars
+export const getCurrentCar = () => {
+    // call api get current car
     return {
-        type: GET_CARS,
-        payload: [{name: 'FORD FOCUS', year: '2012'}, {name: 'OTHER CAR', year: '2015'}]
+        type: GET_CURRENT_CAR,
+        payload: {
+                name: 'Ford Focus1', 
+                year: '2012',
+                priceMin: 8500,
+                priceMax: 9000,
+                mileage: 200000,
+                itemNumber: "#1395P",
+                vin: "3GNDA13D96S631406",
+                views: 37,
+                saves: 20,
+                shares: 15,
+                extrior: {
+                    cylinders: 'L4',
+                    cityMpg: 20,
+                    highMpg: 20,
+                    engine: 1.3,
+                },
+                performance: {
+                    cylinders: 'L4',
+                    cityMpg: 20,
+                    highMpg: 20,
+                    engine: 1.3,
+                },
+                imagesUrls:[
+                    "https://i.pinimg.com/originals/c6/97/15/c697157b77bca2e6d8449ad917b61924.jpg",
+                    "https://noticias.coches.com/wp-content/uploads/2014/02/Ford-Focus-2014-interior-04-650x419.jpg",
+                    "https://i.blogs.es/367759/presentacion-ford-focus-20/450_1000.jpg",
+                    "https://carnovo-wordpress-media.s3.eu-west-1.amazonaws.com/wp-content/uploads/2018/04/10151522/focus-2.jpg",
+                    "https://i0.wp.com/geeksroom.com/wp-content/uploads/2018/04/ford-focus-00.jpg?resize=680%2C384&ssl=1",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-w7l7FSKQ3RWVjG3B2_5xjqkO70N5E2zFCg&usqp=CAU",
+                ]
+            }
     };
 };

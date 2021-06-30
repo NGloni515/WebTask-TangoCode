@@ -1,14 +1,14 @@
-import { GET_CARS } from './cars.types';
+import { GET_CURRENT_CAR } from './cars.types';
 
 const INITIAL_STATE = {
-  currentCars: [],
+  currentCar: {},
 };
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case GET_CARS:
+        case GET_CURRENT_CAR:
            return {
              ...state, 
-             currentCars: action.payload,
+             currentCar: action.payload,
            };
          default: return state;
     }

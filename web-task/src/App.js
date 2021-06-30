@@ -1,11 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Body from './components/Body/Body';
 
-import { connect } from 'react-redux';
-
-import { getCars } from './redux/cars/cars.actions';
 
 function App(props) {
   return (
@@ -17,17 +13,7 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  console.log(state)
-  return {
-    cars: state.cars.currentCars,
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getCars: () => dispatch(getCars())
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default App;
 // export default App;

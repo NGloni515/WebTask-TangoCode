@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import {FaSearch} from 'react-icons/fa'
+import React from 'react';
 import {
     Nav,
     Search,
@@ -8,11 +7,6 @@ import {
     PhoneIcon,
     IconContainer,
     IconBackground,
-    NavLink,
-    Bars,
-    NavMenu,
-    NavBtn,
-    NavBtnLink
   } from './NavbarElements';
   import '../../css/navbar.css';
 

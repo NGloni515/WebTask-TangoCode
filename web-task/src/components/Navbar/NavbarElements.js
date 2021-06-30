@@ -1,7 +1,6 @@
 import { FaSearch, FaPhoneAlt } from 'react-icons/fa';
 import { AiFillClockCircle } from 'react-icons/ai';
 import { IoLocation } from 'react-icons/io5';
-import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { COLORS } from '../styleConst';
