@@ -129,3 +129,12 @@ export const PerformanceTitle =  styled.div`
   text-align: left;
   color: ${COLORS.GRAY};
 `;
+
+// MOBILE ONLY ELEMENTS
+
+export const ImageSlider =  styled.div`
+  width: 100vw;
+  height: 256px;
+  position: relative;
+  margin: auto;
+`;

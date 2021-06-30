@@ -27,10 +27,9 @@ export const IconContainer = styled.div`
   background-color: ${COLORS.ORANGE};
   padding: 24px 24px 16px 24px;
   border-style: none;
-    border-left-style: inset;
-    border-width: 0.5px;
-    border-color: white;
-
+  border-left-style: inset;
+  border-width: 0.5px;
+  border-color: white;
 
 `;
 
@@ -39,6 +38,7 @@ export const Search = styled(FaSearch)`
   color: #fff;
   margin: 24px 24px 16px 24px;
   font-size: 1rem;
+  
   
 `;
 

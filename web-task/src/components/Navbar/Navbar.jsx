@@ -14,14 +14,15 @@ import {
     NavBtn,
     NavBtnLink
   } from './NavbarElements';
+  import '../../css/navbar.css';
 
 const Navbar = () => {
 
     return(
         <Nav>
-            <IconBackground/>
-            <IconContainer>
-                <ClockIcon/>
+            <IconBackground className="icon-background-mobile"/>
+            <IconContainer className="icon-mobile-responsive">
+                <ClockIcon />
             </IconContainer>
             <IconContainer>
                 <PhoneIcon/>
@@ -29,7 +30,7 @@ const Navbar = () => {
             <IconContainer>
                 <LocationIcon/>
             </IconContainer>
-            <Search/>
+            <Search className="icon-mobile-responsive"/>
             
         </Nav>
     )
