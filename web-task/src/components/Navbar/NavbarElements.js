@@ -9,6 +9,7 @@ import { COLORS } from '../styleConst';
 export const Nav = styled.nav`
   background: ${COLORS.BLACK};
   height: 56px;
+  width: 100vw;
   // padding: 0.5rem calc((100vw - 1000px) / 2);
 `;
 
@@ -77,8 +78,6 @@ export const NavMenu = styled.div`
   /* Third Nav */
   width: 100vw;
   white-space: nowrap; 
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
+  
 `;
 

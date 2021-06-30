@@ -70,19 +70,37 @@ export const Container =  styled.div`
   padding: 0;
 `;
 
+export const MainContainer =  styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+`;
+
 export const MainImage =  styled.img`
   margin: 0;
   padding: 0;
   width: 71vw;
+  max-width: 71vw;
+  min-width: 71vw;
   height: 432px;
   float: left;
   object-fit: cover;
 `;
 
+export const ImageElement =  styled.img`
+  width: auto;
+  max-width: 16vw;
+  height: 170px;
+  object-fit: cover;
+`;
+
+
 export const CarGeneralData =  styled.div`
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 0;
   width: 29vw;
+  max-width: 29vw;
+  min-width: 29vw;
   height: 432px;
   float: right;
   background-color: ${COLORS.WHITE};
@@ -91,4 +109,23 @@ export const CarGeneralData =  styled.div`
 export const CarContainer =  styled.div`
   padding: 0;
   margin: 48px 0 0 40px;
+`;
+
+export const PerformanceCard =  styled.div`
+  padding: 40px;
+  margin: 0;
+  max-width: 38vw;
+  min-width: 38vw;
+  height: 266px;
+  background-color: ${COLORS.WHITE};
+`;
+
+export const PerformanceTitle =  styled.div`
+  font-family: ${FONTS.MAIN};
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  padding: 0;
+  text-align: left;
+  color: ${COLORS.GRAY};
 `;

@@ -18,20 +18,17 @@ import {
 const Navbar = () => {
 
     return(
-        <Nav className="navbar">
+        <Nav>
             <IconBackground/>
-                <IconContainer>
-                    <ClockIcon/>
-                </IconContainer>
-            
-                <IconContainer>
-                    <PhoneIcon/>
-                </IconContainer>
-                <IconContainer>
-                    <LocationIcon/>
-                </IconContainer>
-                
-            
+            <IconContainer>
+                <ClockIcon/>
+            </IconContainer>
+            <IconContainer>
+                <PhoneIcon/>
+            </IconContainer>
+            <IconContainer>
+                <LocationIcon/>
+            </IconContainer>
             <Search/>
             
         </Nav>
