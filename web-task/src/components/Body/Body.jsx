@@ -14,6 +14,10 @@ import {
     PerformanceCard,
     PerformanceTitle,
     MainContainer,
+    MobileButton,
+    MobileFooter,
+    MobileFooterTitle,
+    MobileFooterDescription,
     ImageSlider
   } from './BodyElements';
   import {
@@ -86,13 +90,16 @@ const Navbar = () => {
                 </CarGeneralData>
             </MainContainer>
             <Container className="margin-t4 grid-image-container mobile-hide">
-                <ImageElement className="grid-image-item" src="https://www.megautos.com/wp-content/uploads/2018/04/Ford-Focus-2018-titanium-interior-1024x768.jpg" />
+                <ImageElement className="grid-image-item" src="https://i.pinimg.com/originals/c6/97/15/c697157b77bca2e6d8449ad917b61924.jpg" />
                 <ImageElement className="grid-image-item" src="https://noticias.coches.com/wp-content/uploads/2014/02/Ford-Focus-2014-interior-04-650x419.jpg" />
                 <ImageElement className="grid-image-item" src="https://i.blogs.es/367759/presentacion-ford-focus-20/450_1000.jpg" />
                 <ImageElement className="grid-image-item" src="https://carnovo-wordpress-media.s3.eu-west-1.amazonaws.com/wp-content/uploads/2018/04/10151522/focus-2.jpg" />
                 <ImageElement className="grid-image-item" src="https://i0.wp.com/geeksroom.com/wp-content/uploads/2018/04/ford-focus-00.jpg?resize=680%2C384&ssl=1" />
                 <ImageElement className="grid-image-item" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-w7l7FSKQ3RWVjG3B2_5xjqkO70N5E2zFCg&usqp=CAU" />
             </Container>
+            <MobileButton className="desktop-hide">
+                CALL US
+            </MobileButton>
             <Container className="grid-performance-container">
                 <PerformanceCard className="performance-card-responsive">
                     <PerformanceTitle>EXTRIOR</PerformanceTitle>
@@ -113,6 +120,14 @@ const Navbar = () => {
                     </Container>
                 </PerformanceCard>
             </Container>
+            <MobileFooter className="desktop-hide">
+                <MobileFooterTitle>
+                    About Us / Terms / Privacy Policy
+                </MobileFooterTitle>
+                <MobileFooterDescription>
+                    PLS is a registered service mark and other marks are service marks of PLS Financial Services, Inc 2016
+                </MobileFooterDescription>
+            </MobileFooter>
         </div>
         
         

@@ -47,7 +47,7 @@ export const CountNumber = styled.h4`
     margin: 0;
     padding: 0;
     text-align: center;
-    color: ${COLORS.GREEN};
+    color: ${COLORS.LIGHT_GREEN};
 `;
 
 export const VerticalElement = styled.h4`
@@ -114,8 +114,8 @@ export const CarContainer =  styled.div`
 export const PerformanceCard =  styled.div`
   padding: 40px;
   margin: 0;
-  max-width: 38vw;
-  min-width: 38vw;
+  max-width: 39vw;
+  min-width: 39vw;
   height: 266px;
   background-color: ${COLORS.WHITE};
 `;
@@ -137,4 +137,32 @@ export const ImageSlider =  styled.div`
   height: 256px;
   position: relative;
   margin: auto;
+`;
+
+export const MobileButton =  styled.button`
+  width: 100vw;
+  height: 50px;
+  margin: 13px 0 5px 0;
+  background-color: ${COLORS.LIGHT_GREEN};
+  color: ${COLORS.WHITE};
+  font-size: 1rem;
+  border: none;
+`;
+
+export const MobileFooter =  styled.footer`
+  width: 100vw;
+  margin: 13px 0 5px 0;
+  background-color: ${COLORS.BLACK};
+  color: ${COLORS.WHITE};
+  font-size: 0.8rem;
+  text-align: center;
+`;
+
+export const MobileFooterTitle =  styled.p`
+  margin: 10px 0;
+`;
+
+export const MobileFooterDescription =  styled.p`
+  font-size: 0.7rem;
+  margin: 15px;
 `;
