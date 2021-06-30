@@ -8,12 +8,8 @@ function App(props) {
     <div className="App">
       <Navbar />
       <Body />
-      {/* <button onClick={() => props.getCars()}>GET CARS</button> */}
     </div>
   );
 }
 
-
-
 export default App;
-// export default App;

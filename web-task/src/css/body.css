@@ -40,6 +40,8 @@ div.margin-t4{
     grid-template-columns: auto;
     margin:0;
     padding:0;
+    /* width: 100vw;
+    overflow: hidden; */
 }
 
 div.grid-performance-container{

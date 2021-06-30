@@ -166,3 +166,7 @@ export const MobileFooterDescription =  styled.p`
   font-size: 0.7rem;
   margin: 15px;
 `;
+
+export const Text =  styled.p`
+  margin: 0;
+`;

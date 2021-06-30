@@ -1,40 +1,24 @@
-import { GET_CURRENT_CAR } from './cars.types';
+import { GET_CURRENT_CAR, SET_MAIN_IMAGE } from './cars.types';
+import axios from 'axios'
 
-export const getCurrentCar = () => {
+export const getCurrentCar = async () => {
     // call api get current car
+    const options = {
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+        }
+    };
+    let response = await axios.get('http://localhost:3001/api/v1/cars/60dcabb69da4bd2194f49789', {}, options)
     return {
         type: GET_CURRENT_CAR,
-        payload: {
-                name: 'Ford Focus1', 
-                year: '2012',
-                priceMin: 8500,
-                priceMax: 9000,
-                mileage: 200000,
-                itemNumber: "#1395P",
-                vin: "3GNDA13D96S631406",
-                views: 37,
-                saves: 20,
-                shares: 15,
-                extrior: {
-                    cylinders: 'L4',
-                    cityMpg: 20,
-                    highMpg: 20,
-                    engine: 1.3,
-                },
-                performance: {
-                    cylinders: 'L4',
-                    cityMpg: 20,
-                    highMpg: 20,
-                    engine: 1.3,
-                },
-                imagesUrls:[
-                    "https://i.pinimg.com/originals/c6/97/15/c697157b77bca2e6d8449ad917b61924.jpg",
-                    "https://noticias.coches.com/wp-content/uploads/2014/02/Ford-Focus-2014-interior-04-650x419.jpg",
-                    "https://i.blogs.es/367759/presentacion-ford-focus-20/450_1000.jpg",
-                    "https://carnovo-wordpress-media.s3.eu-west-1.amazonaws.com/wp-content/uploads/2018/04/10151522/focus-2.jpg",
-                    "https://i0.wp.com/geeksroom.com/wp-content/uploads/2018/04/ford-focus-00.jpg?resize=680%2C384&ssl=1",
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-w7l7FSKQ3RWVjG3B2_5xjqkO70N5E2zFCg&usqp=CAU",
-                ]
-            }
+        payload: {...response.data.car}
+    };
+};
+
+export const setMainImage = (imageUrl) => {
+    return {
+        type: SET_MAIN_IMAGE,
+        payload: imageUrl
     };
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
     Container,
     MainImage,
@@ -18,6 +18,7 @@ import {
     MobileFooter,
     MobileFooterTitle,
     MobileFooterDescription,
+    Text
   } from './BodyElements';
   import {
     IoMail
@@ -29,18 +30,19 @@ import { Carousel } from 'react-responsive-carousel';
 
 import { connect } from 'react-redux';
 
-import { getCurrentCar } from '../../redux/cars/cars.actions';
+import { getCurrentCar, setMainImage } from '../../redux/cars/cars.actions';
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         currentCar: state.cars.currentCar,
+        mainImage: state.cars.mainImage
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getCurrentCar: () => dispatch(getCurrentCar())
+        getCurrentCar: async() => dispatch( await getCurrentCar()),
+        setMainImage: (imageUrl) => dispatch(setMainImage(imageUrl))
     };
 };
 
@@ -48,9 +50,9 @@ const mapDispatchToProps = (dispatch) => {
 const Body = (props) => {
 
     useEffect(() => {
-        props.getCurrentCar();
+        props.getCurrentCar()
     }, []);
-    console.log('PROPS',props)
+    
     const {name, year, priceMin, priceMax, mileage, itemNumber, vin, views, saves, shares, extrior, performance, imagesUrls} = props.currentCar
     return(
         <div className="grid-container">
@@ -64,7 +66,7 @@ const Body = (props) => {
                 </Carousel>
             </div>
             <MainContainer >
-                <MainImage  className="mobile-hide" src="https://i.pinimg.com/originals/c6/97/15/c697157b77bca2e6d8449ad917b61924.jpg" />
+                <MainImage  className="mobile-hide" src={props.mainImage && props.mainImage} />
                 <CarGeneralData className="mobile-general">
                     <CarContainer className="car-container-mobile">
                         <ContainerTitle> {name} </ContainerTitle>
@@ -103,7 +105,7 @@ const Body = (props) => {
             </MainContainer>
             <Container className="margin-t4 grid-image-container mobile-hide">
                 {imagesUrls && imagesUrls.map((element, index) => 
-                    <ImageElement key={index} className="grid-image-item" src={element} alt={"car image "+ index} />
+                    <ImageElement key={index} className="grid-image-item" src={element} alt={"car image "+ index} onClick={()=>{props.setMainImage(element)}}/>
                 )}
             </Container>
             <MobileButton className="desktop-hide">
@@ -113,19 +115,19 @@ const Body = (props) => {
                 <PerformanceCard className="performance-card-responsive">
                     <PerformanceTitle>EXTRIOR</PerformanceTitle>
                     <Container className="grid-table">
-                         <text className="grid-table-element-right">Cylinders</text> <text className="grid-table-element-left">{extrior && extrior.cylinders}</text>
-                         <text className="grid-table-element-right">City MPG</text> <text className="grid-table-element-left">{extrior && extrior.cityMpg} MPG</text>
-                         <text className="grid-table-element-right">Highway MPG</text> <text className="grid-table-element-left">{extrior && extrior.highwayMpg} MPG</text>
-                         <text className="grid-table-element-right">Engine</text> <text className="grid-table-element-left">{extrior && extrior.engine}</text>
+                         <Text className="grid-table-element-right">Cylinders</Text> <Text className="grid-table-element-left">{extrior && extrior.cylinders}</Text>
+                         <Text className="grid-table-element-right">City MPG</Text> <Text className="grid-table-element-left">{extrior && extrior.cityMpg} MPG</Text>
+                         <Text className="grid-table-element-right">Highway MPG</Text> <Text className="grid-table-element-left">{extrior && extrior.highMpg} MPG</Text>
+                         <Text className="grid-table-element-right">Engine</Text> <Text className="grid-table-element-left">{extrior && extrior.engine}</Text>
                     </Container>
                 </PerformanceCard>
                 <PerformanceCard className="performance-card-responsive">
                     <PerformanceTitle>PERFORMANCE</PerformanceTitle>
                     <Container className="grid-table">
-                        <text className="grid-table-element-right">Cylinders</text> <text className="grid-table-element-left">{performance && performance.cylinders}</text>
-                        <text className="grid-table-element-right">City MPG</text> <text className="grid-table-element-left">{performance && performance.cityMpg} MPG</text>
-                        <text className="grid-table-element-right">Highway MPG</text> <text className="grid-table-element-left">{performance && performance.highwayMpg} MPG</text>
-                        <text className="grid-table-element-right">Engine</text> <text className="grid-table-element-left">{performance && performance.engine}</text>
+                        <Text className="grid-table-element-right">Cylinders</Text> <Text className="grid-table-element-left">{performance && performance.cylinders}</Text>
+                        <Text className="grid-table-element-right">City MPG</Text> <Text className="grid-table-element-left">{performance && performance.cityMpg} MPG</Text>
+                        <Text className="grid-table-element-right">Highway MPG</Text> <Text className="grid-table-element-left">{performance && performance.highMpg} MPG</Text>
+                        <Text className="grid-table-element-right">Engine</Text> <Text className="grid-table-element-left">{performance && performance.engine}</Text>
                     </Container>
                 </PerformanceCard>
             </Container>
